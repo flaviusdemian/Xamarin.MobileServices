@@ -1,10 +1,8 @@
 using System;
 using Android.App;
-using Android.Content;
 using Android.Runtime;
 using Microsoft.WindowsAzure.MobileServices;
 using Xamarin.MobileServices.Core;
-using Message = Android.OS.Message;
 
 namespace Xamarin.MobileServices.Android.MyApplication
 {

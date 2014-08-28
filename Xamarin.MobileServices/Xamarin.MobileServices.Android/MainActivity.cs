@@ -8,7 +8,7 @@ using Android.OS;
 
 namespace Xamarin.MobileServices.Android
 {
-    [Activity(Label = "Xamarin.MobileServices", MainLauncher = true, Icon = "@drawable/icon")]
+    [Activity(Label = "Xamarin.MobileServices.Android", MainLauncher = true, Icon = "@drawable/icon")]
     public class MainActivity : Activity
     {
         int count = 1;
