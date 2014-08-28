@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xamarin.MobileServices.Andr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xamarin.MobileServices.iOS", "..\Xamarin.MobileServices.iOS\Xamarin.MobileServices.iOS.csproj", "{50A62103-1C6C-49BB-9265-D6A9A4722129}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xamarin.MobileServices.Core", "Xamarin.MobileServices.Core\Xamarin.MobileServices.Core.csproj", "{C64EB85D-6321-4499-8AE8-18AF0349A869}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xamarin.MobileServices.Core", "..\Xamarin.MobileServices.Core\Xamarin.MobileServices.Core.csproj", "{C64EB85D-6321-4499-8AE8-18AF0349A869}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
