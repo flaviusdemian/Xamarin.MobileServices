@@ -1,2 +1,6 @@
+/Xamarin.MobileServices/Xamarin.MobileServices.Android/obj
+/Xamarin.MobileServices/Xamarin.MobileServices.Android/bin
 /Xamarin.MobileServices/Xamarin.MobileServices.Core/obj
-/Xamarin.MobileServices.Core/obj
+/Xamarin.MobileServices/Xamarin.MobileServices.Core/bin
+/Xamarin.MobileServices/PushSharp.Client.MonoForAndroid.Gcm/obj
+/Xamarin.MobileServices/PushSharp.Client.MonoForAndroid.Gcm/bin

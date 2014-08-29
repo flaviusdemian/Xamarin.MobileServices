@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xamarin.MobileServices.Core
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xamarin.MobileServices.Android", "Xamarin.MobileServices.Android\Xamarin.MobileServices.Android.csproj", "{7BE714A1-06D1-4B0B-A8D8-38E2290513EA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PushSharp.Client.MonoForAndroid.Gcm", "PushSharp.Client.MonoForAndroid.Gcm\PushSharp.Client.MonoForAndroid.Gcm.csproj", "{1466D096-69FA-4B75-BBB6-533FFAF5D4EB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,6 +25,10 @@ Global
 		{7BE714A1-06D1-4B0B-A8D8-38E2290513EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7BE714A1-06D1-4B0B-A8D8-38E2290513EA}.Release|Any CPU.Build.0 = Release|Any CPU
 		{7BE714A1-06D1-4B0B-A8D8-38E2290513EA}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{1466D096-69FA-4B75-BBB6-533FFAF5D4EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1466D096-69FA-4B75-BBB6-533FFAF5D4EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1466D096-69FA-4B75-BBB6-533FFAF5D4EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1466D096-69FA-4B75-BBB6-533FFAF5D4EB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

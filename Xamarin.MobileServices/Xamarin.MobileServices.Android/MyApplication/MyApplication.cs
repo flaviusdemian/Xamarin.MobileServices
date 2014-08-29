@@ -2,15 +2,24 @@ using System;
 using Android.App;
 using Android.Runtime;
 using Microsoft.WindowsAzure.MobileServices;
+using PushSharp.Client;
+using Xamarin.MobileServices.Android.Helpers;
 using Xamarin.MobileServices.Core;
 
-namespace Xamarin.MobileServices.Android.MyApplication
+[assembly: Permission(Name = Constants.PackageName + ".permission.C2D_MESSAGE")]
+[assembly: UsesPermission(Name = Constants.PackageName + ".permission.C2D_MESSAGE")]
+[assembly: UsesPermission(Name = "com.google.android.c2dm.permission.RECEIVE")]
+[assembly: UsesPermission(Name = "android.permission.GET_ACCOUNTS")]
+[assembly: UsesPermission(Name = "android.permission.INTERNET")]
+[assembly: UsesPermission(Name = "android.permission.WAKE_LOCK")]
+
+namespace com.fundora.mobileservices.demo.MyApplication
 {
     [Application(Debuggable = true)]
     public class MyApplication : Application
     {
         public static MobileServiceClient MobileService =
-            new MobileServiceClient("https://demoflavius.azure-mobile.net/", "BAnpBgjwvAiseBuqYzJohLfKjwSWbD28");
+            new MobileServiceClient("https://fundoraxamarin.azure-mobile.net/", "zSuDvMZtXKDOCvFtILIxeCUwBEUchV91");
 
         public static String Channel = null;
 
@@ -26,13 +35,16 @@ namespace Xamarin.MobileServices.Android.MyApplication
             : base(javaReference, transfer)
         {
         }
-    
+
         public override void OnCreate()
         {
             try
             {
                 base.OnCreate();
                 // do application specific things here
+                PushClient.CheckDevice(this);
+                PushClient.CheckManifest(this);
+                PushClient.Register(this, Constants.ProjectNumber);
             }
             catch (Exception ex)
             {
