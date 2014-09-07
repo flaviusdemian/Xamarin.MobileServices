@@ -1,4 +1,6 @@
 using System;
+using System.Collections.Generic;
+using WindowsAzure.Messaging;
 using Android.App;
 using Android.Runtime;
 using Microsoft.WindowsAzure.MobileServices;
@@ -13,13 +15,13 @@ using Xamarin.MobileServices.Core;
 [assembly: UsesPermission(Name = "android.permission.INTERNET")]
 [assembly: UsesPermission(Name = "android.permission.WAKE_LOCK")]
 
-namespace com.fundora.mobileservices.demo.MyApplication
+namespace com.fundora.mobileservices.demo
 {
     [Application(Debuggable = true)]
     public class MyApplication : Application
     {
-        public static MobileServiceClient MobileService =
-            new MobileServiceClient("https://fundoraxamarin.azure-mobile.net/", "zSuDvMZtXKDOCvFtILIxeCUwBEUchV91");
+        public static MobileServiceClient MobileService = new MobileServiceClient("https://fundoraxamarin.azure-mobile.net/", "zSuDvMZtXKDOCvFtILIxeCUwBEUchV91");
+        public static NotificationHub Hub = new NotificationHub(Constants.NotificationHubPath, Constants.ConnectionString, Context);
 
         public static String Channel = null;
 
@@ -30,6 +32,7 @@ namespace com.fundora.mobileservices.demo.MyApplication
         public static MobileServiceUser MobileServicesUser = null;
         public static UserEntity CurrentUser = new UserEntity();
         public static Channel CurrentChannel = new Channel();
+        public static string RegistrationId = null;
 
         public MyApplication(IntPtr javaReference, JniHandleOwnership transfer)
             : base(javaReference, transfer)

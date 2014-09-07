@@ -1,4 +1,6 @@
 using System;
+using System.Collections.Generic;
+using System.Text;
 using Android.App;
 using Android.Content;
 using Android.Media;
@@ -17,12 +19,20 @@ namespace com.fundora.mobileservices.demo
         {
             try
             {
-                Console.WriteLine("Message successfully received!");
+                var msg = new StringBuilder();
+
+                if (intent != null && intent.Extras != null)
+                {
+                    foreach (var key in intent.Extras.KeySet())
+                        msg.AppendLine(key + "=" + intent.Extras.Get(key));
+                }
+
+                Console.WriteLine("Message successfully received! {0}", msg);
                 //Pull out the notification details
                 string title = intent.Extras.GetString("alert");
                 string message = intent.Extras.GetString("alert");
                 //Create a new intent
-                intent = new Intent(this, typeof (ChatActivity));
+                intent = new Intent(this, typeof(ChatActivity));
                 //Create the notification
                 var notification = new Notification(Resource.Drawable.twitter, title);
                 notification.Flags = NotificationFlags.AutoCancel;
@@ -43,6 +53,21 @@ namespace com.fundora.mobileservices.demo
             Console.WriteLine("Push successfully registered!");
             try
             {
+                MyApplication.RegistrationId = registrationId;
+                MyApplication.Hub.UnregisterAll(registrationId);
+            }
+            catch (Exception ex)
+            {
+                ex.ToString();
+            }
+
+            //var tags = new String[] { "xamarin" }; // create tags if you want
+            String[] tags = null;
+            try
+            {
+                MyApplication.Hub.Register(registrationId, tags);
+                var hubRegistration = MyApplication.Hub.Register(registrationId, tags);
+                Console.WriteLine("RegistrationId:" + hubRegistration.RegistrationId);
             }
             catch (Exception ex)
             {
